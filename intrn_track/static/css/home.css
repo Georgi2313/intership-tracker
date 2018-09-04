@@ -1,0 +1,47 @@
+/*color combination used
+#618685
+#80ced6
+#d5f4e6
+#fefbd8
+*/
+
+.header {
+    background-color: #80ced6;
+    text-align: center;
+    padding : 30px;    
+}
+
+.nav {
+    overflow: hidden;
+    background-color: #618685;
+
+}
+
+.nav a{
+    
+    float: left;
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/*4 parallel columns      34% and 22% X 3 colmns */
+
+.column {
+    float: left;
+}
+
+.columnleft {
+    width: 34%;
+}
+.card {
+    width: 22%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
