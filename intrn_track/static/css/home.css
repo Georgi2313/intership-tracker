@@ -6,7 +6,7 @@
 */
 
 .header {
-    background-color: #80ced6;
+    background-color:#80ced6;
     text-align: center;
     padding : 30px;    
 }
@@ -27,6 +27,10 @@
     text-decoration: none;
 }
 
+.nav a:hover{
+    background-color: #80ced6;
+    color:#fefbd8;
+}
 /*4 parallel columns      34% and 22% X 3 colmns */
 
 .column {
@@ -35,13 +39,36 @@
 
 .columnleft {
     width: 34%;
+    float: left;
 }
-.card {
-    width: 22%;
+.columnright{
+    width: 21.5%;
+    float: left;
+    padding: 0px 0px 0px 5px;
 }
 
 .row:after {
     content: "";
     display: table;
     clear: both;
+}
+
+.card {
+    padding: 5px;
+    background-color: #fefbd8;
+    margin-top: 10px;
+}
+
+.cardss {
+    padding:  5px;
+    background-color: #d5f4e6;
+    margin-top: 10px;
+}
+
+.cardss h1{
+    text-align: center;
+}
+
+.card h1{
+    text-align: center;
 }
