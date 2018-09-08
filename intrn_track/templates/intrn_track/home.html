@@ -1,5 +1,7 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
+<a href="{% url 'home' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+
 <html>
     <head>
         <title>internship tracker</title>
@@ -23,9 +25,11 @@
         <div class="row">
             <div class="columnleft">
                 <div class="card">
-                    <h1>TITLE HEADING</h1>
-                    <h5>published date: 03/06/2018</h5>
-                    <p>text box.. end to input cards</p>
+                    <h2>EnD PoInt</h2>
+                    <form method="POST" class="post-form">{% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="save btn btn-default">Save</button>
+                    </form>
                 </div>
             </div>
 
