@@ -7,6 +7,9 @@ class Card(models.Model):
     status=models.CharField(max_length=100)
     section=models.IntegerField(default=1)
     create_date=models.DateTimeField(default=timezone.now())
+
+class Direction(models.Model):
+    search=models.IntegerField()
     
     def __str__(self):
         return self.title

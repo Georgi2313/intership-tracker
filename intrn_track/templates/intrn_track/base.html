@@ -1,0 +1,92 @@
+{% load static %}
+<!--  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">  -->
+<!--  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">  -->
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<a href="{% url 'home' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+
+<html>
+    <head>
+        <title>internship tracker</title>
+        <!--<link rel="stylesheet" href="{% static 'css/home.css' %}">-->
+    </head>
+    <body>
+        <div class="header">
+            <h1>InTerNshIp tRacKeR</h1>
+            <p>You are screwed...</p>
+        </div>
+        <div class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+        </div>
+
+        <div class="row">
+
+        </div>
+
+{% block content %}
+       
+ {% endblock %}       
+
+<!--generating cards for "to_do" list-->
+            <div class="columnright">
+                <div class="cardss">
+                    <h2>TO DO LIST</h2>
+                </div>
+                
+                    {%for card in cards%}
+                        {%if card.section == 1 %} 
+                            <div class="cardss">  
+                                <!--  <a class="btn btn-default" href="{% url 'home'  %}"><span class="glyphicon glyphicon-pencil"></span></a>   -->      
+                                <h4>{{card.title}}   <a>ID:{{card.pk}}</a></h4>
+                                <hr>
+                                <p>{{card.text}}</p>
+                                <p>{{card.status}}</p>
+                            </div>
+                        {%endif%}
+                    {%endfor%}
+                
+            </div>
+
+
+<!--to generate cards for doing list-->
+            <div class="columnright">
+                <div class="cardss">
+                    <h2>DOING</h2>
+                </div>
+                
+                    {%for card in cards%}
+                        {%if card.section == 2 %}   
+                            <div class="cardss">             
+                                <h4>{{card.title}}   <a>ID:{{card.pk}}</a></h4>
+                                <hr>
+                                <p>{{card.text}}</p>
+                                <p>{{card.status}}</p>
+                            </div>
+                        {%endif%}
+                    {%endfor%}    
+            </div>
+
+
+<!--to generate cards for done list-->
+            <div class="columnright">
+                <div class="cardss">
+                    <h2>DONE</h2>
+                </div>
+                
+                    {%for card in cards%}
+                        {%if card.section == 3 %}
+                            <div class="cardss">                
+                                <h4>{{card.title}}   <a>ID:{{card.pk}}</a></h4>
+                                <hr>
+                                <p>{{card.text}}</p>
+                                <p>{{card.status}}</p>
+                            </div>
+                        {%endif%}
+                    {%endfor%}
+            </div>
+
+
+        </div>
+
+    </body>
+</html>

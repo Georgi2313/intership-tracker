@@ -31,7 +31,29 @@
     background-color: #80ced6;
     color:#fefbd8;
 }
-/*4 parallel columns      34% and 22% X 3 colmns */
+
+.edit-update {
+    padding: 20px;
+    overflow: hidden;
+    background-color: white;
+    
+}
+
+.edit-update a{
+    float: left;
+    display: block;
+    color: black;
+    background-color: #d5f4e6;
+    text-align: center;
+    padding: 14px 17% ;
+    text-decoration: none;
+}
+
+.edit-update a:hover {
+    background-color: #80ced6;
+    color: #618685;
+}
+/*4 parallel columns      34.2% and 21.5% X 3 colmns */
 
 .column {
     float: left;
@@ -57,12 +79,15 @@
     padding: 5px;
     background-color: #fefbd8;
     margin-top: 10px;
+    border-radius: 40px 20px;
 }
 
 .cardss {
     padding:  5px;
     background-color: #d5f4e6;
     margin-top: 10px;
+    border-radius: 15px;
+    
 }
 
 .cardss h2{
@@ -71,4 +96,8 @@
 
 .card h2{
     text-align: center;
+}
+
+.cardss h4 a{
+    float: right;
 }

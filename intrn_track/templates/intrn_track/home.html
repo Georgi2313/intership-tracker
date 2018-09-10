@@ -1,90 +1,24 @@
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
-<a href="{% url 'home' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+{%  extends "intrn_track/base.html" %}
 
-<html>
-    <head>
-        <title>internship tracker</title>
-        <!--<link rel="stylesheet" href="{% static 'css/home.css' %}">-->
-    </head>
-    <body>
-        <div class="header">
-            <h1>InTerNshIp tRacKeR</h1>
-            <p>You are screwed...</p>
-        </div>
-        <div class="nav">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-        </div>
-
-        <div class="row">
-
-        </div>
-
+{% block content %}
 
         <div class="row">
             <div class="columnleft">
+                <div class="edit-update">
+                    
+                            <a href="">End PoInT</a>
+                            <a href="/edit/">UpDaTe</a>
+                    
+                </div>
                 <div class="card">
                     <h2>EnD PoInt</h2>
-                    <form method="POST" class="post-form">{% csrf_token %}
+                    <form method="POST" class="post-form">
+                        {% csrf_token %}
                         {{ form.as_p }}
                         <button type="submit" class="save btn btn-default">Save</button>
                     </form>
                 </div>
+                
             </div>
 
-<!--generating cards for "to_do" list-->
-            <div class="columnright">
-                <div class="cardss">
-                    <h2>TO DO LIST</h2>
-                </div>
-                <div class="cardss">
-                    {%for card in cards%}
-                        {%if card.section == 1 %}                
-                            <h5>{{card.title}}</h5>
-                            <p>{{card.text}}</p>
-                            <p>{{card.status}}</p>
-                        {%endif%}
-                    {%endfor%}
-                </div>
-            </div>
-
-
-<!--to generate cards for doing list-->
-            <div class="columnright">
-                <div class="cardss">
-                    <h2>DOING</h2>
-                </div>
-                <div class="cardss">
-                    {%for card in cards%}
-                        {%if card.section == 2 %}                
-                            <h5>{{card.title}}</h5>
-                            <p>{{card.text}}</p>
-                            <p>{{card.status}}</p>
-                        {%endif%}
-                    {%endfor%}
-                </div>    
-            </div>
-
-
-<!--to generate cards for done list-->
-            <div class="columnright">
-                <div class="cardss">
-                    <h2>DONE</h2>
-                </div>
-                <div class="cardss">
-                    {%for card in cards%}
-                        {%if card.section == 3 %}                
-                            <h5>{{card.title}}</h5>
-                            <p>{{card.text}}</p>
-                            <p>{{card.status}}</p>
-                        {%endif%}
-                    {%endfor%}
-                </div>
-            </div>
-
-
-        </div>
-
-    </body>
-</html>
+{% endblock %}

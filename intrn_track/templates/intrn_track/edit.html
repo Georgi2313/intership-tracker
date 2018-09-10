@@ -1,0 +1,31 @@
+{%  extends "intrn_track/base.html" %}
+
+{% block content %}
+
+        <div class="row">
+            <div class="columnleft">
+                <div class="edit-update">
+                    
+                    <a href="/">End PoInT</a>
+                    <a href="/edit/">UpDaTe</a>
+                    
+                </div>
+                <div class="card">
+                    <h2>EdIt CaRd</h2>
+                    <form method="POST" class="post-form">
+                        {% csrf_token %}
+                        {{ process.as_p }}
+                    
+                        <button type="submit" class="save btn btn-default">Go</button>
+                    </form>
+                    <form method="POST" class="post-form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button tupe="submit" class="save btn btn-default">Update</button>
+                    </form>
+                    
+                    
+                </div>
+            </div>
+
+{% endblock %}
