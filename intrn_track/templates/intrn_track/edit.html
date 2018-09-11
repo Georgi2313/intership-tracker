@@ -15,16 +15,19 @@
             <div class="columnleft">
                 <div class="edit-update">
                     
-                    <a href="/">End PoInT</a>
-                    <a href="/edit/">UpDaTe</a>
+                    <a href="/">New Card</a>
+                    <a href="/edit/">Update Card</a>
                     
                 </div>
                 <div class="card">
                     <h2>EdIt CaRd</h2>
                     
-                       
+                    <h4>Search ID</h4>  
                     <input type="number" name="search" id="search"  />
                     <button type="button" onclick="link()" >Go</button>
+
+                    <br>
+                    <hr>
                     
                     <form method="POST" class="post-form">
                         {% csrf_token %}
