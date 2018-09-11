@@ -2,6 +2,15 @@
 
 {% block content %}
 
+<script>
+    function link()
+    {
+        var search=document.getElementById('search').value;
+        var mylink="/" + search + "/edit/";
+        window.location.href = mylink;
+
+    }
+</script>
         <div class="row">
             <div class="columnleft">
                 <div class="edit-update">
@@ -12,16 +21,15 @@
                 </div>
                 <div class="card">
                     <h2>EdIt CaRd</h2>
-                    <form method="POST" class="post-form">
-                        {% csrf_token %}
-                        {{ process.as_p }}
                     
-                        <button type="submit" class="save btn btn-default">Go</button>
-                    </form>
+                       
+                    <input type="number" name="search" id="search"  />
+                    <button type="button" onclick="link()" >Go</button>
+                    
                     <form method="POST" class="post-form">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <button tupe="submit" class="save btn btn-default">Update</button>
+                        <button type="submit" class="save btn btn-default">Update</button>
                     </form>
                     
                     
