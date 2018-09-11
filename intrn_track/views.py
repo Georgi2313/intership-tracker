@@ -3,7 +3,13 @@ from .models import Card, Direction
 from django.utils import timezone
 from .forms import PostForm, Process 
 
-def edit(request,pk=2):
+def editb(request):
+    form=PostForm()
+    cards=Card.objects.order_by('create_date')
+    return render(request,'intrn_track/edit.html',{'cards': cards, 'form':form})
+
+
+def edit(request,pk):
     
     if pk!=None:
         post=get_object_or_404(Card,pk=pk)
@@ -18,10 +24,12 @@ def edit(request,pk=2):
             #form=PostForm(request.POST,instance=post)
 
     else:   
-        post=get_object_or_404(Card,pk=2)
-        form=PostForm(instance=post)
+        #post=get_object_or_404(Card,pk)
+        form=PostForm()
     cards=Card.objects.order_by('create_date')
     return render(request,'intrn_track/edit.html',{'cards': cards, 'form':form})
+
+
 
 
 def home(request):
@@ -37,8 +45,8 @@ def home(request):
                 post.save()
         
     else:
-        post=get_object_or_404(Card,pk=2)
-        form=PostForm(instance=post)
+        #post=get_object_or_404(Card,pk=2)
+        form=PostForm()
      
     
     cards=Card.objects.order_by('create_date')
